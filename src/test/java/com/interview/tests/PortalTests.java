@@ -26,7 +26,7 @@ public class PortalTests extends BaseTest {
         OrderPage orders = new OrderPage(driver);
         orders.openOrderForm();
         orders.createOrder("keyboard", 2);
-        assertTrue(orders.successText().contains("Order created"));
+        assertTrue(orders.successText().matches("Order #\\d+ created"));
     }
 
     @Test
