@@ -6,8 +6,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import java.nio.file.Path;
+import java.util.logging.Logger;
 
 public abstract class BaseTest {
+    public static final Logger LOG = Logger.getLogger(BaseTest.class.getName());
     protected WebDriver driver;
 
     @BeforeEach
@@ -19,6 +21,7 @@ public abstract class BaseTest {
         options.addArguments("--window-size=1280,900");
         driver = new ChromeDriver(options);
         String url = Path.of("app", "index.html").toAbsolutePath().toUri().toString();
+        LOG.info("Navigating to URL: " + url);
         driver.get(url);
     }
 

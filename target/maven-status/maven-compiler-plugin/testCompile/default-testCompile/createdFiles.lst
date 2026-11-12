@@ -1,0 +1,4 @@
+com\interview\tests\PortalTests.class
+com\interview\core\BaseTest.class
+com\interview\pages\LoginPage.class
+com\interview\pages\OrderPage.class
